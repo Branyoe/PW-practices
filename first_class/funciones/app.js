@@ -3,7 +3,9 @@ greet();
 
 //functions as parameterr
 logGreeting = fn => fn();
-logGreeting(greet);
+logGreeting(function(){
+  console.log('Hello from a function created on a fly');
+});
 //Estamos pasando la función greet 
 //como parámetro e invocandola con el 
 //nombre del argumento "fn"
@@ -15,3 +17,12 @@ greetMe();
 logGreeting(greetMe)
 //functions are first class, pass it as a parameter
 
+let color = 'rojo';
+let talla = 'M';
+let modelo = 'Clasico';
+
+console.log('Juan tiene una playera talla ' + talla + ' de color ' + color + ' modelo ' + modelo);
+console.log(`Juan tiene una playera
+talla ${talla}  
+de color ${color}
+modelo ${modelo}`)
