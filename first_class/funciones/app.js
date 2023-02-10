@@ -3,7 +3,7 @@ greet();
 
 //functions as parameterr
 logGreeting = fn => fn();
-logGreeting(function(){
+logGreeting(function(){ //function created on the fly
   console.log('Hello from a function created on a fly');
 });
 //Estamos pasando la función greet 
@@ -17,6 +17,9 @@ greetMe();
 logGreeting(greetMe)
 //functions are first class, pass it as a parameter
 
+//**Practica 3 */
+
+//template strings
 let color = 'rojo';
 let talla = 'M';
 let modelo = 'Clasico';
