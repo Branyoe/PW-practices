@@ -1,8 +1,9 @@
+//inyección de dependecias
 let greet = require("./greet1");
 let greet2 = require("./greet2").greet;
 // let greet2a = require("./greet2"); //forma recomendada cuando el mosulo solo tiene una prop
 const greet3 = require("./greet3"); //objeto conrtruido/instanciado
-const { greeting } = require("./greet3")
+const { greeting } = require("./greet3") //destrucuturación
 const Greet4 = require("./greet4"); //constructor
 
 greet();

@@ -1,3 +1,4 @@
+//regrsa un objeto instaciado
 function Greetr(){
   this.greeting = "Hello from de function constructor";
   this.greet = function(){

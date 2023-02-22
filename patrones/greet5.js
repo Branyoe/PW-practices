@@ -1,7 +1,8 @@
+//regresa un objeto personalizado para solo exponer lo deceado
 let greeting = "Hello from greet5"
 
 let greet = () => console.log(greeting);
 
 module.exports = {
-  greet: greet
+  greet
 }
