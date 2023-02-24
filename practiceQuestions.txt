@@ -1,0 +1,55 @@
+1.
+  http: 
+    Hypertext Transfer Protocol", es el nombre de un protocolo el cual nos permite realizar una petición de datos y recursos, como pueden ser documentos HTML.
+
+  sevidor http:
+    Un servidor web o servidor HTTP es un programa informático que procesa una aplicación del lado del servidor, realizando conexiones bidireccionales o unidireccionales y síncronas o asíncronas con el cliente y generando o cediendo una respuesta en cualquier lenguaje o aplicación del lado del cliente.
+
+  HTTP paquete:
+    Los mensajes HTTP, son los medios por los cuales se intercambian datos entre servidores y clientes. Hay dos tipos de mensajes: peticiones, enviadas por el cliente al servidor, para pedir el inicio de una acción; y respuestas, que son la respuesta del servidor.
+
+  http request:
+    Una solicitud HTTP es realizada por un cliente, a un host con nombre, que es ubicado en un servidor. El objetivo de la solicitud es acceder a un recurso en el servidor.
+
+  http response:
+    Un servidor realiza una respuesta HTTP a un cliente. El objetivo de la La respuesta es proporcionar al cliente el recurso que solicitó, o informar el cliente que la acción que solicitó se ha llevado a cabo; o bien para informar El cliente que se produjo un error al procesar su solicitud.
+    Una respuesta HTTP contiene
+      Una línea de estado.
+      Una serie de encabezados HTTP o campos de encabezado.
+      Un cuerpo de mensaje, que generalmente se necesita.
+
+  TCP port:
+    Los puertos TCP permiten distinguir distintas aplicaciones dentro de una misma máquina, A través del número de puerto se identifican las aplicaciones emisores y receptoras. Esto resulta fundamental, junto a la IP, para que se puede establecer la comunicación entre cliente y servidor.
+
+  HTTP methods:
+    HTTP define un conjunto de métodos de petición para indicar la acción que se desea realizar para un recurso determinado.
+    GET
+      El método GET solicita una representación de un recurso específico. Las peticiones que usan el método GET sólo deben recuperar datos.
+
+    HEAD (en-US)
+      El método HEAD pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.
+
+    POST
+      El método POST se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
+
+    PUT
+      El modo PUT reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
+
+    DELETE (en-US)
+      El método DELETE borra un recurso en específico.
+
+    CONNECT
+      El método CONNECT establece un túnel hacia el servidor identificado por el recurso.
+
+    OPTIONS (en-US)
+      El método OPTIONS es utilizado para describir las opciones de comunicación para el recurso de destino.
+
+    TRACE
+      El método TRACE realiza una prueba de bucle de retorno de mensaje a lo largo de la ruta al recurso de destino.
+
+    PATCH
+      El método PATCH es utilizado para aplicar modificaciones parciales a un recurso.
+
+7. estamo haciendo una petición a nuestro servidor con nuestro navegador mediante el metodo get
+
+9. esa pantalla nos muestra todas la cabeceras de la respuesta de parte del servidor y de nuestra petición por parte del navegador.
