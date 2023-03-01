@@ -19,8 +19,11 @@ app.get('/uno', (req, res) => {
   res.send('Hello World, from route one');//response
 })
 
-app.get('/prueba', (req, res) => {
-  res.send(`<h3>Hola desde prueba con html</h3>`);//response
+app.get('/api', (req, res) => {
+  res.json({
+    firstname: 'John',
+    lastname: 'Doe'
+  })
 })
 
 //pone a la escucha el servidor en local
