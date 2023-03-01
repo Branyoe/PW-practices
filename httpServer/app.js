@@ -14,7 +14,7 @@ app.get('/uno', (req, res) => {
 })
 
 app.get('/prueba', (req, res) => {
-  res.send('Hello World, from route Prueba');//response
+  res.send(`<h3>Hola desde prueba con html</h3>`);//response
 })
 
 //pone a la escucha el servidor en local
