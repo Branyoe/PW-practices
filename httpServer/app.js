@@ -1,7 +1,7 @@
 const express = require('express'); //modulo para servidores web
 const app = express(); //inicializa la app
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;//toma el puerto por defecto o de lo contrario el 3000
 
 //Función que define como se comportará la ruta raíz con el metodo GET
 app.get('/', (req, res) => {
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   `);
 })
 
-
+//ruta con paso de parametros
 app.get('/person/:id', (req, res) => {
   res.send(`
     <html>
@@ -26,9 +26,10 @@ app.get('/person/:id', (req, res) => {
         <h1>Person: ${req.params.id}</h1>
       </body>
     </html>
-  `);
+  `);//parametros accesibles desde req
 })
 
+//ruta con respuesta json
 app.get('/api', (req, res) => {
   res.json({
     firstname: 'John',
