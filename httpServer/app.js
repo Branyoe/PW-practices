@@ -9,33 +9,18 @@ app.use('/assets', express.static(path.join(__dirname, '/public')));
 app.use('/', (req, res, next) => { //ejecuta un callback cada que se consulta una ruta usando un middleware
   console.log('Request Url: ' + req.url);
   next();
-})
+});
+
+app.set('view engine', 'ejs') //configura ejs como el motor de platillas por defecto
 
 //Función que define como se comportará la ruta raíz con el metodo GET
 app.get('/', (req, res) => {
-  res.send(`
-    <html>
-      <head>
-        <link rel="stylesheet" href="/assets/style.css" type="text/css">
-      </head> 
-      <body>
-        <h1>Hello world!</h1>
-      </body>
-    </html>
-  `);
+  res.render('index'); //rendriza el archivo index.ejs
 })
 
 //ruta con paso de parametros
 app.get('/person/:id', (req, res) => {
-  res.send(`
-    <html>
-      <head>
-      </head>
-      <body>
-        <h1>Person: ${req.params.id}</h1>
-      </body>
-    </html>
-  `);//parametros accesibles desde req
+  res.render('persons', { ID: req.params.id}) //renderiza persons.ejs y pasa un obj a la vista ejs
 })
 
 //ruta con respuesta json
