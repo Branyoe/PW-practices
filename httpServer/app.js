@@ -1,14 +1,23 @@
 const express = require('express'); //modulo para servidores web
+const path = require('path');
+
 const app = express(); //inicializa la app
 
 const port = process.env.PORT || 3000;//toma el puerto por defecto o de lo contrario el 3000
+
+app.use('/assets', express.static(path.join(__dirname, '/public')));
+app.use('/', (req, res, next) => { //ejecuta un callback cada que se consulta una ruta usando un middleware
+  console.log('Request Url: ' + req.url);
+  next();
+})
 
 //Función que define como se comportará la ruta raíz con el metodo GET
 app.get('/', (req, res) => {
   res.send(`
     <html>
       <head>
-      </head>
+        <link rel="stylesheet" href="/assets/style.css" type="text/css">
+      </head> 
       <body>
         <h1>Hello world!</h1>
       </body>
