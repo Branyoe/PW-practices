@@ -23,6 +23,16 @@ app.get('/person/:id', (req, res) => {
   res.render('persons', { ID: req.params.id}) //renderiza persons.ejs y pasa un obj a la vista ejs
 })
 
+const DATA = [
+  {id: 1,  nombre: "Hugo", apellido: "Estrada Ramirez", edad: 19},
+  {id: 2,  nombre: "Estela", apellido: "Perez Suarez", edad: 18},
+  {id: 3,  nombre: "Sabrina", apellido: "Contreras Morales", edad: 17},
+];
+//ruta con paso de parametros
+app.get('/personas', (req, res) => {
+  res.render('personas', {data: DATA}) //renderiza personas.ejs y pasa un array a la vista
+})
+
 //ruta con respuesta json
 app.get('/api', (req, res) => {
   res.json({
