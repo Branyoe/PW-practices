@@ -34,7 +34,8 @@ app.get('/', (req, res) => {
 app.get('/person/:id', (req, res) => {
   res.render('person', { //renderiza person.ejs
     ID: req.params.id,
-    Qstr: req.query.qrst //extrae la query del header
+    MESSAGE: req.query.message,
+    TIMES: req.query.times //extrae la query del header
   })
 })
 
