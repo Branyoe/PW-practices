@@ -22,10 +22,12 @@
   }
   
   //switch sustituido por notación del corchete
-  if(msgValues[MESSAGE]){%> //valída que el mesaje sea valido
+  // valída que el mesaje sea valido
+  if(msgValues[MESSAGE]){%> 
     <h2>Mensaje: <%= msgValues[MESSAGE] %></h2>
     <%
-    if(Number(TIMES) % 1 == 0){ //valída que el paramtro TIMES sea entero
+    //valída que el paramtro TIMES sea entero
+    if(Number(TIMES) % 1 == 0){ 
       for(var i = 0; i < Number(TIMES); i++) {%>
         <h4><%= `${msgValues[MESSAGE]} ${ID}` %> </h4>
       <% }   
