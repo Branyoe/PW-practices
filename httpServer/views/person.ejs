@@ -13,35 +13,19 @@
   <h1>Person Name: <%= ID %>
   </h1>
   </h1>
-  <%
-  const msgValues = {
+  <% const msgValues = {
     'bienvenido': 'Bienvenido',
     'hola': 'Hola',
     'adios': 'Adiós'
   }
+  
+  //switch sustituido por notación del corchete
+  if(msgValues[MESSAGE]){ %>
+    <h2>Mensaje: <%= msgValues[MESSAGE] %></h2>
+  <%} else {%>
+    <h2>Mensaje invalido</h2>
+  <% }
 
-  //utilizando switch
-  switch (MESSAGE) { 
-    case 'hola' : %>
-      <h2>Mensaje: <%= msgValues[MESSAGE] %></h2>
-    <% 
-    break; 
-    case 'bienvenido' : 
-    %>
-      <h2>Mensaje: <%= msgValues[MESSAGE] %></h2>
-    <% 
-    break; 
-    case 'adios' : 
-    %>
-      <h2>Mensaje: <%= msgValues[MESSAGE] %></h2>
-    <% 
-    break; 
-    default:
-    %>
-      <h2>Mensaje invalido</h2>
-    <% 
-    break; 
-  }
   if(Number(TIMES) % 1 == 0){
     for(var i = 0; i < Number(TIMES); i++) { %>
       <h4><%= msgValues[MESSAGE] && `${msgValues[MESSAGE]} ${ID}`%> </h4>
