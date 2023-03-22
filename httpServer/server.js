@@ -7,9 +7,12 @@ const port = process.env.PORT || 3000;//toma el puerto por defecto o de lo contr
 
 app.use('/assets', express.static(path.join(__dirname, '/public')));
 
+app.set('view engine', 'ejs'); //configura ejs como motor de plantillas
+
 //Función que define como se comportará la ruta raíz con el metodo GET
 app.get('/', (req, res) => {
-  res.send(`
+  //renderiza html plano
+  res.send(` 
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -29,21 +32,10 @@ app.get('/', (req, res) => {
 
 //ruta con paso de parametros
 app.get('/person/:id', (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <link rel="stylesheet" href="/assets/style.css">
-    </head>
-    <body>
-      Person view
-    </body>
-    </html>
-  `);
+  res.render('person', { //renderiza person.ejs
+    ID: req.params.id,
+    Qstr: req.query.qrst //extrae la query del header
+  })
 })
 
 //pone a la escucha el servidor en local
