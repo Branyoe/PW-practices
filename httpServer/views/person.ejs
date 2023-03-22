@@ -13,26 +13,30 @@
   <h1>Person Name: <%= ID %>
   </h1>
   </h1>
-  <% const msgValues = {
+  <% 
+  //objeto clave valor para simplificar el codigo
+  const msgValues = { 
     'bienvenido': 'Bienvenido',
     'hola': 'Hola',
     'adios': 'Adiós'
   }
   
   //switch sustituido por notación del corchete
-  if(msgValues[MESSAGE]){ %>
+  if(msgValues[MESSAGE]){%> //valída que el mesaje sea valido
     <h2>Mensaje: <%= msgValues[MESSAGE] %></h2>
-  <%} else {%>
+    <%
+    if(Number(TIMES) % 1 == 0){ //valída que el paramtro TIMES sea entero
+      for(var i = 0; i < Number(TIMES); i++) {%>
+        <h4><%= `${msgValues[MESSAGE]} ${ID}` %> </h4>
+      <% }   
+    }else{%>
+      <h4>El query times debe ser un numero entero</h4>
+    <%}
+  } else {%>
     <h2>Mensaje invalido</h2>
-  <% }
+  <% } %>
 
-  if(Number(TIMES) % 1 == 0){
-    for(var i = 0; i < Number(TIMES); i++) { %>
-      <h4><%= msgValues[MESSAGE] && `${msgValues[MESSAGE]} ${ID}`%> </h4>
-    <% }   
-  }else{%>
-    <h4>El query times debe ser un numero entero</h4>
-  <%}%>
+  
 </body>
 
 </html>

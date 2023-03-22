@@ -33,8 +33,8 @@ app.get('/', (req, res) => {
 //ruta con paso de parametros
 app.get('/person/:id', (req, res) => {
   res.render('person', { //renderiza person.ejs
-    ID: req.params.id,
-    MESSAGE: req.query.message,
+    ID: req.params.id, //dato proveniente de params
+    MESSAGE: req.query.message, //datos provenientes de query
     TIMES: req.query.times //extrae la query del header
   })
 })
