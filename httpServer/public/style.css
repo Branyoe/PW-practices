@@ -3,6 +3,10 @@ body{
   background-color: #f1c1c1;
 }
 
+p{
+  color: blue;
+}
+
 table{
   text-align: center;
   border: 2px solid white;
