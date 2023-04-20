@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Json</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Prueba de la llamada a jquery</h1>
+  <script>
+    $.ajax({
+      type: "POST",
+      url: "/person_json",
+      data: JSON.stringify({
+        name: "juan",
+        apellido: "Parra"
+      }),
+      dataType: "json",
+      contentType: "application/json"
+    })
+  </script>
+</body>
+</html>

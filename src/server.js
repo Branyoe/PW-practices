@@ -18,5 +18,9 @@ app.use(personsRouter); //configura el router de personas
 app.use(studentRouter); //configura el router de estudiantes
 app.use('/assets', express.static(path.join(__dirname, '/public'))); //configura el directorio publico
 
+app.get('/', (req, res) => { //ruta por defecto
+  res.send('Practicas');
+});
+
 //***Inicialización***/
 app.listen(port, () => console.log(`server on http://localhost:${port}`)); //pone a la escucha el servidor en local
