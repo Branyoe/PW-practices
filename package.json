@@ -4,7 +4,7 @@
   "description": "practica escolar para el manejo de mongodb",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/dataBase.js"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "Brandon Yoel Hernández Ascecencio",

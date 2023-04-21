@@ -7,5 +7,5 @@ mongoose.connect(process.env.MONGODB_URI, {
     // useFindAndModify: true,
     // useCreateIndex: true
 })
-.then(db => console.log('DB is connected'))
+.then(db => console.log('conectado a', db.connection.name))
 .catch(error => console.log(error));
