@@ -5,14 +5,14 @@ require('dotenv').config();
 const path = require('path');
 
 mongoose.Promise = global.Promise;
-const app = express();
+const app = express();//create express app
 
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'ejs'); //set view engine to ejs
+app.set('views', path.join(__dirname, '/views'));//set views directory
 
-app.use('/assets', express.static(path.join(__dirname, '/public')));
-app.use(express.urlencoded({ extended: true }));
+app.use('/assets', express.static(path.join(__dirname, '/public'))); //set public directory
+app.use(express.urlencoded({ extended: true }));//use body parser
 app.use(personRouter);
 
 module.exports = app;
