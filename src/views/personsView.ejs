@@ -31,7 +31,7 @@
                 <td> <%= person.name %> </td>
                 <td> <%= person.age %> </td>
                 <td> <%= person.bloodType %> </td>
-                <td> <a class="btn btn-success" href="<%= `find-by-id/${person._id}` %>">Update</a> </td>
+                <td> <a class="btn btn-success" href="<%= `update-person/${person._id}` %>">Update</a> </td>
                 <td> <a class="btn btn-danger" href="<%= `delete-person/${person._id}` %>">Delete</a> </td>
               </tr>
             <%});%>
