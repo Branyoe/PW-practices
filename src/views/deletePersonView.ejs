@@ -51,6 +51,7 @@
           <p class="card-text">
             Are you sure you want to delete this person?
           </p>
+          <!-- show the person to delete -->
           <div class="card" style="width: 100%;">
             <div class="card-header">
               <strong>Name:</strong> <%= person.name %>
@@ -62,7 +63,8 @@
             </ul>
           </div>
           <br>
-          <form method="POST" action=" <% `/delete-person/{person._id}` %> ">
+          <!-- call the route deletePerson by the method POST -->
+          <form method="POST" action=" <% `/delete-person/{person._id}` %> "> 
             <a href="/persons" class="btn btn-primary">Cancel</a>
             <input type="submit" class="btn btn-danger" value="Delete">
           </form>

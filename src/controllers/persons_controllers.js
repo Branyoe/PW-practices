@@ -3,7 +3,7 @@ const Person = require("../models/Person");
 module.exports = {
 
   //**Read */
-  getPersons: async (req, res) => {
+  getPersons: async (req, res) => { //show all persons
     try {
       const persons = await Person.find({});
       res.render('personsView', { persons });
@@ -13,8 +13,8 @@ module.exports = {
   },
 
   //**Create */
-  getAddPerson: (req, res) => res.render('addPersonView'),
-  postAddPerson: async (req, res) => {
+  getAddPerson: (req, res) => res.render('addPersonView'), //show add form
+  postAddPerson: async (req, res) => { //add person
     try {
       const newPerson = new Person({
         name: req.body.name,
@@ -30,7 +30,7 @@ module.exports = {
   },
 
   //**Update */
-  getUpdatePerson: async (req, res) => {
+  getUpdatePerson: async (req, res) => { //show update form
     try {
       const foundPerson = await Person.findById(req.params.id);
       res.render('updatePersonView', { person: foundPerson });
@@ -38,7 +38,7 @@ module.exports = {
       res.json(error.message);
     }
   },
-  postUpdatePerson: async (req, res) => {
+  postUpdatePerson: async (req, res) => { //update person
     try {
       await Person.findByIdAndUpdate(req.body.id, {
         name: req.body.name,
@@ -53,7 +53,7 @@ module.exports = {
   },
 
   //**Delete */
-  getDeletePerson: async (req, res) => {
+  getDeletePerson: async (req, res) => { //show delete alert
     try {
       const foundPerson = await Person.findById(req.params.id); 
       res.render('deletePersonView', { person: foundPerson });
@@ -61,7 +61,7 @@ module.exports = {
       res.json(error.message);
     }
   },
-  postDeletePerson: async (req, res) => {
+  postDeletePerson: async (req, res) => { //delete person
     try{
       await Person.findByIdAndDelete(req.params.id);
       res.redirect('/persons');
