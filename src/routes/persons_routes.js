@@ -18,4 +18,7 @@ router.post('/update-person', personsCtrl.postUpdatePerson);
 router.get('/delete-person/:id', personsCtrl.getDeletePerson);
 router.post('/delete-person/:id', personsCtrl.postDeletePerson);
 
+//Search
+router.post('/search-person', personsCtrl.postSearchPerson);
+
 module.exports = router;

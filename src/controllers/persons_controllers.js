@@ -68,5 +68,15 @@ module.exports = {
     }catch(error){
       res.json(error.message);
     }
+  },
+  
+  //**Search */
+  postSearchPerson: async (req, res) => { //search person
+    try {
+      const persons = await Person.find({ name: { $regex: req.body.criteria , $options: "i" }});
+      res.render('personsView', { persons });
+    }catch(error){
+      res.json(error.message);
+    }
   }
 };

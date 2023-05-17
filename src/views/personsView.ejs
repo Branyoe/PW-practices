@@ -16,28 +16,54 @@
       <div class="col-3"></div>
       <div class="col-6 text-center">
         <h1>Persons List</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">NSS</th>
-              <th scope="col">Name</th>
-              <th scope="col">Age</th>
-              <th scope="col">blood Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% persons.forEach(person=> { %>
+        <form 
+          class="d-flex mb-2 mt-2" 
+          action="/search-person"
+          method="post"
+        >
+          <input 
+            class="form-control me-2" 
+            placeholder="Search" 
+            aria-label="Search"
+            name="criteria"
+            id="criteria"
+            type="text" 
+          >
+          <input 
+            class="btn btn-outline-primary" 
+            type="submit"
+            value="Search"
+          >
+          </input>
+        </form>
+        <% if(persons.length) {%>
+          <table class="table">
+            <thead>
               <tr>
-                <th scope="row"> <%= person.nss %> </th>
-                <td> <%= person.name %> </td>
-                <td> <%= person.age %> </td>
-                <td> <%= person.bloodType %> </td>
-                <td> <a class="btn btn-success" href="<%= `update-person/${person._id}` %>">Update</a> </td>
-                <td> <a class="btn btn-danger" href="<%= `delete-person/${person._id}` %>">Delete</a> </td>
+                <th scope="col">NSS</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">blood Type</th>
               </tr>
-            <%});%>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% persons.forEach(person=> { %>
+                <tr>
+                  <th scope="row"> <%= person.nss %> </th>
+                  <td> <%= person.name %> </td>
+                  <td> <%= person.age %> </td>
+                  <td> <%= person.bloodType %> </td>
+                  <td> <a class="btn btn-success" href="<%= `update-person/${person._id}` %>">Update</a> </td>
+                  <td> <a class="btn btn-danger" href="<%= `delete-person/${person._id}` %>">Delete</a> </td>
+                </tr>
+              <%});%>
+            </tbody>
+          </table>
+        <% } else { %>
+          <div class="alert alert-danger" role="alert">
+            No persons found
+          </div>
+        <% } %>
         <a href="./add-person" class="btn btn-primary">Add</a>
       </div>
       <div class="col-3"></div>
