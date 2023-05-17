@@ -73,7 +73,7 @@ module.exports = {
   //**Search */
   postSearchPerson: async (req, res) => { //search person
     try {
-      const persons = await Person.find({ name: { $regex: req.body.criteria , $options: "i" }});
+      const persons = await Person.find({ name: { $regex: req.body.criteria , $options: "i" }});//i: case insensitive
       res.render('personsView', { persons });
     }catch(error){
       res.json(error.message);

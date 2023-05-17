@@ -16,6 +16,7 @@
       <div class="col-3"></div>
       <div class="col-6 text-center">
         <h1>Persons List</h1>
+        <!-- Persons search form -->
         <form 
           class="d-flex mb-2 mt-2" 
           action="/search-person"
@@ -36,6 +37,7 @@
           >
           </input>
         </form>
+        <!-- found persons validation -->
         <% if(persons.length) {%>
           <table class="table">
             <thead>
